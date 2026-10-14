@@ -36,6 +36,13 @@ try:
     root_agent = Agent(
         name="weather_agent",
         model="gemini-2.5-flash",
+        description="Trợ lý thời tiết dùng các tool từ MCP server.",
+        instruction=(
+            "Bạn là trợ lý thời tiết, trả lời bằng ngôn ngữ của người dùng. "
+            "Luôn gọi get_current_weather cho thời tiết hiện tại và get_forecast "
+            "cho dự báo (1-3 ngày); không tự bịa số liệu. "
+            "Tóm tắt ngắn gọn và kèm lời khuyên thực tế (mang ô, áo khoác...)."
+        ),
         tools=[weather_tools],
     )
     logger.info("✅ Weather agent initialized with remote MCP tools:")
