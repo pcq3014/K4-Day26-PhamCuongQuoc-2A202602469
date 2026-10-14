@@ -35,7 +35,7 @@ try:
     # Create the agent with remote MCP tools
     root_agent = Agent(
         name="weather_agent",
-        model="gemini-2.5-flash",
+        model="gemini-3.5-flash",
         description="Trợ lý thời tiết dùng các tool từ MCP server.",
         instruction=(
             "Bạn là trợ lý thời tiết, trả lời bằng ngôn ngữ của người dùng. "
@@ -61,6 +61,6 @@ except Exception as e:
     logger.warning("⚠️  Creating fallback agent without MCP tools")
     root_agent = Agent(
         name="weather_agent",
-        model="gemini-2.5-flash",
+        model="gemini-3.5-flash",
     )
 
